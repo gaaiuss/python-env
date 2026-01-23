@@ -1,9 +1,7 @@
 # ============================
-# Projeto
-# Referência: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+# Reference Project: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
 #
-# Instale o pacote: python-dotenv
-# Mostrei como no README.md
+# Install python-dotenv
 #
 # Os pontos de atenção estão comentados próximo das chaves, aqui só coloquei um
 # lembrete.
