@@ -51,61 +51,6 @@ Reinicie o computador se necessário.
 
 ---
 
-## Ambiente Python com Python, pip e venv
-
-Esse é o ambiente tradicional mais atualizado. Tradicional porque vamos usar coisas
-que são amplamente usadas no mundo Python, como: o python na sua última versão, pip (que vem com o Python) e o venv para criar nosso ambiente virtual.
-
-O processo é super simples:
-
-1. Crie uma pasta para o seu projeto
-2. Abra essa pasta com o VS Code (File > Open Folder)
-3. Abra o terminal dentro da pasta (CTRL ou CMD + J) e digite
-
-```sh
-python -m venv .venv
-# Ativa o ambiente virtual e depois instale o python-dotenv
-pip install python-dotenv
-```
-
-Pronto, agora siga as instruções do vídeo tutorial.
-
----
-
-## pyenv e pyenv-win
-
-O Pyenv é uma lib que gerencia versões do Python. Ele permite que você instale, desinstale e use várias versões do Python no mesmo sistema operacional.
-
-Para Windows você precisa liberar o PowerShell:
-
-```powershell
-# Execute o powershell como administrador
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
-Links - ([pyenv](https://github.com/pyenv/pyenv) / [pyenv-win](https://github.com/pyenv-win/pyenv-win))
-
-Após a instalação, os comandos abaixo vão te ajudar.
-
-```sh
-# Comandos
-pyenv commands # lista os comandos
-pyenv install -l # lista as versões do Python disponíveis
-pyenv install 3.13.3 # Instala o Python 3.13.3
-pyenv versions # Mostra as verões do Python instaladas
-pyenv local 3.13.3 # Configura o Python 3.13.3 na pasta e suas sub-pastas
-pyenv global 3.13.3 # configura o Python 3.13.3 globalmente no sistema todo
-pyenv exec # Executa algum comando com o Python selecionado, ex abaixo:
-
-pyenv install 3.11.9 # Instala o Python 3.11.9
-pyenv global 3.11.9 # Configura o Python 3.11.9 como global (usarei com exec)
-pyenv exec python -m venv .venv # Cria um ambiente virtual com o Python global
-```
-
-Pronto, agora siga as instruções do vídeo tutorial.
-
----
-
 ## Gerenciando tudo com o uv
 
 [uv](https://docs.astral.sh/uv/getting-started/) é uma ferramenta que promete bastante. Sua intenção é substituir praticamente todas as outras ferramentas: pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, e outras... Até agora tem cumprido tudo com perfeição. Além disso, é uma ferramenta extremamente rápida, escrita em Rust.
@@ -199,11 +144,6 @@ disso, já adicionei o `python-dotenv` como dependência do projeto.
 Para instalar escolha uma das opções abaixo:
 
 ```bash
-# Opção 1: pip
-pip install python-dotenv
-# Opção 2: uv pip
-uv pip install python-dotenv
-# Opção 3: uv
 uv sync
 ```
 
