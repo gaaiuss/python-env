@@ -11,8 +11,7 @@
   "workbench.editor.labelFormat": "short",
   "editor.tabSize": 2,
   "editor.rulers": [79, 120],
-  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
-  "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+  "workbench.colorTheme": "Tokyo City",
   "explorer.compactFolders": false,
   "editor.minimap.enabled": false,
   "workbench.editor.enablePreview": false,
@@ -83,5 +82,10 @@
       "comments": true,
       "strings": true
     }
-  }
+  },
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
+  "git.confirmSync": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "explorer.confirmDelete": false
 }
