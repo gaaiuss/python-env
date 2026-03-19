@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": 0,
   "breadcrumbs.enabled": true,
   "editor.fontSize": 18,
   "debug.console.fontSize": 18,
@@ -87,5 +86,9 @@
   "git.confirmSync": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.startupEditor": "none",
+  "git.autofetch": true,
+  "window.zoomLevel": 0
 }

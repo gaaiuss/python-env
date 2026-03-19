@@ -1,62 +1,32 @@
 # Ambiente Python + VS Code 2025
 
-**Quer entender tudo o que está nesse projeto?**
+My current setup for Python projects
 
-Eu explico passo a passo como montar esse ambiente moderno nos vídeos abaixo:
+## Initial requirements
 
-- Parte 1: [Ambiente Python Moderno - Tradicional](https://youtu.be/QTw5eB6GTM8)
-- Parte 2: [Ambiente Python Moderno - Pyenv e Pyenv-win](https://youtu.be/X38M7C_A2XU)
-- Parte 3: [Ambiente Python Moderno - UV Astral](https://youtu.be/HuAc85cLRx0)
-- Parte 4: [Como iniciar novos projetos com Ambiente Python Moderno](https://youtu.be/TcfFXur4YKg)
+1. [Python](https://www.python.org/downloads/)
+2. [Git](https://git-scm.com/downloads)
+3. [VS Code](https://code.visualstudio.com/)
 
----
+On Windows, allow PowerShell to execute scripts (like virtual environments)
 
-## Sobre
-
-Este projeto serve como um esqueleto moderno para projetos Python utilizando:
-
-- Python 3.13+
-- VS Code com extensões
-- Ambiente virtual (venv ou [uv](https://docs.astral.sh/uv/getting-started/))
-- Controle de versões do Python ([pyenv](https://github.com/pyenv/pyenv) / [pyenv-win](https://github.com/pyenv-win/pyenv-win) ou [uv](https://docs.astral.sh/uv/getting-started/))
-- Lint e formatação com [Ruff](https://github.com/astral-sh/ruff)
-- Tipagem estática e Lint com Pylance e [Pyright](https://github.com/microsoft/pyright)
-- Execução e testes rápidos com Code Runner
-- Configuração geral do VS Code
-- Temas para ícones e VS Code
-- Configuração inicial do Git no projeto
-
----
-
-## Requisitos iniciais
-
-Recomendo já ter as versões oficiais das coisas que vamos configurar. Isso evita que a extensão do Python para VS Code não funcione por algum motivo que desconheço (ao meu ver, um bug da própria extensão, mas infelizmente precisamos dela para integração com o VS Code).
-
-Portanto, tenha o seguinte já instalado no seu computador:
-
-1. O [Python](https://www.python.org/downloads/)
-2. O [Git](https://git-scm.com/downloads)
-3. O [VS Code](https://code.visualstudio.com/)
-
-Se você usa Windows, libere o PowerShell para executar scripts:
-
-1. Abra o Terminal ou PowerShell **como administrador**
-2. Cole o comando abaixo e pressione `ENTER`:
+1. Open PowerShell **as administrator**
+2. Run this command:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Reinicie o computador se necessário.
+Reboot if necessary.
 
 ---
 
-## Gerenciando tudo com o uv
+## UV Manager
 
-[uv](https://docs.astral.sh/uv/getting-started/) é uma ferramenta que promete bastante. Sua intenção é substituir praticamente todas as outras ferramentas: pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, e outras... Até agora tem cumprido tudo com perfeição. Além disso, é uma ferramenta extremamente rápida, escrita em Rust.
+[uv](https://docs.astral.sh/uv/getting-started/)
 
 ```sh
-# Instalação do uv (Windows, Linux, Mac)
+# UV installation (Windows, Linux, Mac)
 # Windows PowerShell:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
@@ -65,34 +35,31 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ```sh
-# Cria o projeto completo
-diretório: uv init nome-do-projeto
+# Creates the full project
+directory: uv init project-name
 
-# Ou inicializa dentro de um projeto existente:
+# Initialize an existing project:
 uv init
 ```
 
 ```sh
-# Instala Python, cria venv e instala dependências em 1 comando
+# Installs Python, creates venv and installs dependencies
 uv sync
 ```
 
 ```sh
-# Instala pacotes
+# Install packges
 uv add requests ruff pyright
 
-# Remove pacotes
+# Remove packages
 uv remove requests
-
-# Requerimentos via requirements.txt
-uv add -r requirements.txt
 ```
 
 ```sh
-# Executa scripts Python sem ativar venv
+# Runs Python scripts without activating venv
 uv run src/main.py
 
-# Instala ferramentas como ruff ou pyright globalmente
+# Installs tools like ruff or pyright globally
 uv tool install ruff
 uvx ruff
 uv tool uninstall ruff
@@ -100,35 +67,35 @@ uv tool uninstall ruff
 
 ---
 
-## Configuração do Git
+## Git Config
 
 ```bash
-# Inicia o repositório
-git init # Não precisa fazer isso se a uv já fez
+# Initialize repository
+git init # Don't need to do this if UV already done it.
 
-# Configura usuário global
-git config --global user.name "Seu Nome"
-git config --global user.email "seu@email.com"
+# Configures Global User
+git config --global user.name "gaaiuss"
+git config --global user.email "caio.gui.castro@gmail.com"
 
-# Padroniza branches para 'main'
+# Standard branches to 'main'
 git config --global init.defaultBranch main
 git branch -m main
 
-# Padroniza finais de linha para multiplataforma
+# Standard end of line for multiplatform
 git config --global core.autocrlf input
 git config --global core.eol lf
 
 git config --list --global
 
-# Primeiro commit
+# First commit
 git add .
 git commit -m "initial"
 
-# Configurar o repositório
+# Congigure repository
 git remote add origin URL_REPO_SSH
 git push origin main -u
 
-# Nos próximos
+# Future commits
 git add .
 git commit -m "MENSAGEM"
 git push
@@ -138,19 +105,13 @@ git push
 
 ## `.env` e `.env-example`
 
-É extremamente comum precisarmos de variáveis de ambiente em nossos projetos. Sabendo
-disso, já adicionei o `python-dotenv` como dependência do projeto.
-
-Para instalar escolha uma das opções abaixo:
+Default pattern for env variables, `python-dotenv` is already added as a project dependency:
 
 ```bash
 uv sync
 ```
 
-Copie o arquivo `.env-example` para outro arquivo chamado de `.env` para ativar as
-variáveis de ambiente. Já deixei um teste na função principal que pode responder duas coisas:
+Copy `.env-example` to another file named `.env` to activate the env variables:
 
 - `Check dotenv: dotenv is working fine`
 - `Check dotenv: Not working. Read the README.md`
-
-As mensagens são auto explicativas. Se você receber `Not working`, provavelmente não copiou o arquivo `.env-example` para `.env`.
