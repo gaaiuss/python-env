@@ -1,17 +1,10 @@
 # ============================
-# Reference Project: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
-#
-# Install python-dotenv
-#
-# Os pontos de atenção estão comentados próximo das chaves, aqui só coloquei um
-# lembrete.
-#
-# Atenção: As versões do Python devem ser consistentes entre:
+# Warning: Python version must be consistant between:
 #   - project.requires-python
 #   - tool.ruff.target-version
 #   - tool.pyright.pythonVersion
 #
-# Atenção: O nome do pacote principal deve ser consistente entre:
+# Warning: Package name must be consistant between:
 #   - project.scripts
 #   - tool.ruff.lint.isort.known-first-party
 #   - A pasta dentro de 'src/'
@@ -27,7 +20,7 @@ requires-python = ">=3.13"
 dependencies = ["python-dotenv>=1.1.0"]
 
 [project.urls]
-Homepage = "https://www.otaviomiranda.com.br/"
+# Homepage = "https://www.otaviomiranda.com.br/"
 # Documentation = "https://example.org"
 # Repository = "https://github.com/me/spam.git"
 # Issues = "https://github.com/me/spam/issues"
