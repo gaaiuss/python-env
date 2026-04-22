@@ -1,4 +1,4 @@
-# Ambiente Python + VS Code 2025
+# Python Env + VS Code 2026
 
 My current setup for Python projects
 
@@ -10,7 +10,7 @@ My current setup for Python projects
 
 On Windows, allow PowerShell to execute scripts (like virtual environments)
 
-1. Open PowerShell **as administrator**
+1. Open PowerShell **as admin**
 2. Run this command:
 
 ```powershell

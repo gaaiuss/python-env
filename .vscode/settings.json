@@ -6,7 +6,7 @@
   "editor.glyphMargin": true,
   "workbench.activityBar.location": "default",
   "editor.lineNumbers": "on",
-  "files.eol": "\n", // Final de linha sempre será LF
+  "files.eol": "\n", // Endline is always LF
   "workbench.editor.labelFormat": "short",
   "editor.tabSize": 2,
   "editor.rulers": [79, 120],
@@ -26,6 +26,7 @@
   "tailwindCSS.experimental.classRegex": [
     ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
+
   // Python
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -37,27 +38,24 @@
       "source.organizeImports.ruff": "explicit"
     }
   },
-  "python.defaultInterpreterPath": ".\\.venv\\Scripts\\python.exe", // ou ./.venv/bin/python Mac/Linux
+  "python.defaultInterpreterPath": ".\\.venv\\Scripts\\python.exe", // or ./.venv/bin/python Mac/Linux
   "python.analysis.autoImportCompletions": true,
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.terminal.activateEnvironment": true,
   "python.languageServer": "Pylance",
   "python.venvPath": ".venv",
 
-  // 🛠 Formatação e Lint
+  // Formatting and Linting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-
   "emmet.includeLanguages": {
     "django-html": "html",
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
   },
-
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -90,5 +88,8 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.startupEditor": "none",
   "git.autofetch": true,
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
 }
