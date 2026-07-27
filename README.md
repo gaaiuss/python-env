@@ -1,8 +1,22 @@
-# Python Env + VS Code 2026
+## Python Environment
 
-My current setup for Python projects
+This is a setup for a basic Python project
 
-## Initial requirements
+### Explaining files
+
+`/src`: folder for all the scripts/codes (python files, modules, config files).
+
+`.env-example`: environment variables example file for base .env setup. Rename it to '.env' after changing it.
+
+`.gitignore`: git ignored files list, names listed in the file will not be managed by git and consequently will not be posted on GitHub.
+
+`python-version`: Python version used on this repository.
+
+`pyproject.toml`: uv configuration file that lists and configures all the project dependencies (names, versions, linters, folder hierarchy).
+
+---
+
+### Initial requirements
 
 1. [Python](https://www.python.org/downloads/)
 2. [Git](https://git-scm.com/downloads)
@@ -21,7 +35,7 @@ Reboot if necessary.
 
 ---
 
-## UV Manager
+### UV Manager
 
 [uv](https://docs.astral.sh/uv/getting-started/)
 
@@ -67,7 +81,7 @@ uv tool uninstall ruff
 
 ---
 
-## Git Config
+### Git Config
 
 ```bash
 # Initialize repository
@@ -103,7 +117,7 @@ git push
 
 ---
 
-## `.env` e `.env-example`
+### `.env` e `.env-example`
 
 Default pattern for env variables, `python-dotenv` is already added as a project dependency:
 
@@ -111,7 +125,4 @@ Default pattern for env variables, `python-dotenv` is already added as a project
 uv sync
 ```
 
-Copy `.env-example` to another file named `.env` to activate the env variables:
-
-- `Check dotenv: dotenv is working fine`
-- `Check dotenv: Not working. Read the README.md`
+Copy `.env-example` to another file named `.env` to activate the env variables.
