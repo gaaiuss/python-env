@@ -1,6 +1,8 @@
-## Python Environment
+### Python Environment
 
-This is a setup for a basic Python project
+This is a setup for a basic Python project.
+
+---
 
 ### Explaining files
 
@@ -22,7 +24,7 @@ This is a setup for a basic Python project
 2. [Git](https://git-scm.com/downloads)
 3. [VS Code](https://code.visualstudio.com/)
 
-On Windows, allow PowerShell to execute scripts (like virtual environments)
+On Windows, allow PowerShell to execute scripts (like virtual environments).
 
 1. Open PowerShell **as admin**
 2. Run this command:
