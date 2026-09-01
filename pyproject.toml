@@ -22,17 +22,8 @@ dependencies = [
     "rich>=15.0.0",
 ]
 
-[project.urls]
-
 [project.optional-dependencies]
 dev = ["ruff", "pyright", "pytest", "pytest-xdist"]
-
-[project.scripts]
-# Defines the console commands. The key ('project1") is the command.
-# The value points to 'package_name.module_name:function_name'.
-# Ex: 'my_package.main:run' -> src/my_package/main.py (and the function inside).
-# Remember to sync the package name in 'known-first-party' of Ruff.
-project1 = "my_package.my_module:run_from_script"
 
 # ============================
 # Linting and auto format (Ruff)
