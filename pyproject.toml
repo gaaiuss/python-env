@@ -112,14 +112,12 @@ python_files = [
     "*_tests.py",
 ]
 
-# --doctest-modules: pytest can now execute doctests (tests in docstrings).
-# --strict-markers: only markers registered below are allowed.
 addopts = [
-    "-s",
-    "--color=yes",
-    "--tb=short",
-    "--doctest-modules",
-    "--strict-markers",
+    "-s", # Disables output capturing.
+    "--color=yes", # Forces colored output.
+    "--tb=short", # Compact traceback.
+    "--doctest-modules", # Enable doctests (tests in docstrings).
+    "--strict-markers", # Only markers registered are allowed.
 ]
 markers = [
     "slow: Run slow tests",
