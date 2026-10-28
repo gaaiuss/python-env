@@ -1,4 +1,4 @@
-# ============================
+# ============================================================================
 # Warning: Python version must be consistant between:
 #   - project.requires-python
 #   - tool.ruff.target-version
@@ -8,7 +8,7 @@
 #   - project.scripts
 #   - tool.ruff.lint.isort.known-first-party
 #   - The folder inside 'src/'
-# ============================
+# ============================================================================
 [project]
 name = "project1"
 version = "0.0.1"
@@ -25,9 +25,9 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["ruff", "pyright", "pytest", "pytest-xdist"]
 
-# ============================
-# Linting and auto format (Ruff)
-# ============================
+# ============================================================================
+#                        Linting and auto format (Ruff)
+# ============================================================================
 [tool.ruff]
 line-length = 88
 target-version = "py314"
@@ -66,9 +66,9 @@ line-ending = "lf"
 # It must be the same name of the folder inside the 'src/'.
 known-first-party = ["my_package"]
 
-# ============================
-# Typing (Pyright)
-# ============================
+# ============================================================================
+#                              Typing (Pyright)
+# ============================================================================
 [tool.pyright]
 typeCheckingMode = "strict"
 pythonVersion = "3.14"
@@ -88,12 +88,11 @@ venvPath = "."
 executionEnvironments = [{ root = "src" }]
 
 # Rules disabled
-# reportMissingTypeStubs = "none" # Missing stubs file
-# reportUnknownMemberType = "none" # Type of parameter partially unknown
+reportMissingTypeStubs = "none" # Missing stubs file
 
-# ============================
-# Tests (Pytest)
-# ============================
+# ============================================================================
+#                              Tests (Pytest)
+# ============================================================================
 [tool.pytest.ini_options]
 # Add 'src' to Python path during tests. This allows the tests in `tests/` 
 # to import the modules in `src/` without errors.
@@ -128,9 +127,9 @@ markers = [
     "fast: Run fast tests",
 ]
 
-# ============================
-# Build and Setuptools
-# ============================
+# ============================================================================
+#                             Build and Setuptools
+# ============================================================================
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
