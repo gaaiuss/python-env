@@ -47,9 +47,9 @@ exclude = [
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-    "D", # All doctype rules
+    "D", # All doctype rules.
     "T201", # Checks for print statements.
-    "A004", # Import `print` is shadowing a Python builtin
+    "A004", # Import shadowing a Python builtin.
 ]
 
 [tool.ruff.lint.per-file-ignores]
@@ -87,7 +87,7 @@ venvPath = "."
 executionEnvironments = [{ root = "src" }]
 
 # Rules disabled
-reportMissingTypeStubs = "none" # Missing stubs file
+reportMissingTypeStubs = "none" # Missing stubs file.
 
 # ============================================================================
 #                              Tests (Pytest)
