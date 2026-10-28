@@ -34,7 +34,15 @@ target-version = "py314"
 fix = true
 show-fixes = true
 indent-width = 4
-exclude = ["venv", ".venv", "env", ".env", "node_modules", "__pycache__"]
+exclude = [
+    "venv", 
+    ".venv", 
+    "env", 
+    ".env", 
+    "node_modules", 
+    "__pycache__", 
+    ".coveragerc",
+]
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -73,6 +81,7 @@ exclude = [
     "**/.env",
     "**/node_modules",
     "**/__pycache__", 
+    ".coveragerc", 
 ]
 venv = ".venv"
 venvPath = "."
@@ -86,11 +95,38 @@ executionEnvironments = [{ root = "src" }]
 # Tests (Pytest)
 # ============================
 [tool.pytest.ini_options]
-addopts = "-s --color=yes --tb=short"
 # Add 'src' to Python path during tests. This allows the tests in `tests/` 
 # to import the modules in `src/` without errors.
 pythonpath = ["src"]
 testpaths = ["tests"]
+
+# Path where your Django project settings.py is
+DJANGO_SETTINGS_MODULE = "project.settings"
+
+# Test naming conventions: used by pytest to locate all test files
+# inside your project.
+python_files = [
+    "test.py",
+    "tests.py",
+    "test_*.py",
+    "tests_*.py",
+    "*_test.py",
+    "*_tests.py",
+]
+
+# --doctest-modules: pytest can now execute doctests (tests in docstrings).
+# --strict-markers: only markers registered below are allowed.
+addopts = [
+    "-s",
+    "--color=yes",
+    "--tb=short",
+    "--doctest-modules",
+    "--strict-markers",
+]
+markers = [
+    "slow: Run slow tests",
+    "fast: Run fast tests",
+]
 
 # ============================
 # Build and Setuptools
