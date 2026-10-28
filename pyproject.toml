@@ -47,9 +47,8 @@ exclude = [
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-    # Ignore ruff rules here
+    "D", # All doctype rules
     "T201", # Checks for print statements.
-    "D100", # Missing docstring in public module
     "A004", # Import `print` is shadowing a Python builtin
 ]
 
